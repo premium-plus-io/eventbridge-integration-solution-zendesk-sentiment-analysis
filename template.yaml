@@ -14,7 +14,7 @@ Metadata:
     ReadmeUrl: README.md
     Labels: ['zendesk', 'moderation','step_functions','lambda','eventbridge','integration','aws_solutions','sentiment_analysis','comprehend']
     HomePageUrl: https://github.com/aws-quickstart/eventbridge-integration-solution-zendesk-sentiment-analysis
-    SemanticVersion: 0.1.1
+    SemanticVersion: 0.1.2
     SourceCodeUrl: https://github.com/aws-quickstart/eventbridge-integration-solution-zendesk-sentiment-analysis
   AWS::CloudFormation::Interface:
     ParameterGroups:
