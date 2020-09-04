@@ -14,7 +14,7 @@ Metadata:
     ReadmeUrl: README.md
     Labels: ['zendesk', 'moderation','step_functions','lambda','eventbridge','integration','aws_solutions','sentiment_analysis','comprehend']
     HomePageUrl: https://github.com/aws-quickstart/eventbridge-integration-solution-zendesk-sentiment-analysis
-    SemanticVersion: 0.1.2
+    SemanticVersion: 0.1.3
     SourceCodeUrl: https://github.com/aws-quickstart/eventbridge-integration-solution-zendesk-sentiment-analysis
   AWS::CloudFormation::Interface:
     ParameterGroups:
@@ -41,11 +41,11 @@ Metadata:
       ZendeskSubdomain:
         default: Subdomain
       ZendeskSLANormalWait:
-        default: 60
+        default: Normal Wait SLA
       ZendeskSLAHighWait:
-        default: 60
+        default: High Wait SLA
       ZendeskSLAUrgentWait:
-        default: 60
+        default: Urgent Wait SLA
 Parameters:
   EventSourceName:
     Type: String
@@ -68,15 +68,15 @@ Parameters:
     Description: The Zendesk subdomain which is a unique identifier of your Zendesk account
   ZendeskSLANormalWait:
     Type: Number
-    Description: Normal priority SLA wait time
+    Description: Normal priority SLA wait time (in seconds)
     Default: 60
   ZendeskSLAHighWait:
     Type: Number
-    Description: High priority SLA wait time
+    Description: High priority SLA wait time (in seconds)
     Default: 60
   ZendeskSLAUrgentWait:
     Type: Number
-    Description: Urgent priority SLA wait time
+    Description: Urgent priority SLA wait time (in seconds)
     Default: 60
 Globals:
   Function:
