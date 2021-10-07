@@ -10,7 +10,7 @@ exports.handler = async (event) => {
                 password: process.env.ZendeskPassword
             },
             data: {
-                "tags": ["${event.sentiment}"]
+                "tags": [`sentiment_${event.sentiment}`]
             }
         })
 
