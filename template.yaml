@@ -174,14 +174,7 @@ Resources:
           GetSentiment:
             Type: Task
             Resource: !GetAtt GetSentiment.Arn
-            Next: isNegative
-          isNegative:
-            Type: Choice
-            Choices:
-            - Variable: $.sentiment
-              StringEquals: NEGATIVE
-              Next: setTags
-            Default: ClosedOrNotNegative
+            Next: setTags
           setTags:
             Type: Task
             Resource: !GetAtt SetTags.Arn
