@@ -3,14 +3,14 @@ exports.handler = async (event) => {
 
     try {
         const res = await axios({
-            method:"post",
+            method:"PUT",
             url:`https://${process.env.ZendeskSubdomain}.zendesk.com/api/v2/tickets/${event.id}/tags.json`,
             auth:{
                 username: `${process.env.ZendeskEmail}/token`,
                 password: process.env.ZendeskPassword
             },
             data: {
-                "tags": ["negative"]
+                "tags": ["${event.sentiment}"]
             }
         })
 
